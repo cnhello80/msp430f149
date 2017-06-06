@@ -7,11 +7,11 @@ void main(void)
   WatchDog_off();
   Clock_Init();
   UART_Init();
+  Init_Wifi();
   while(1)
   {
-    printf(HELLOWORLD);
-    printf(EOLTEST);
+    Send_Command(POSTTEST);
     //Send_Byte('a');
-    delay_ms(1000);       
+    delay_ms(10000);       
   }
 }
