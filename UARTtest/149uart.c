@@ -2,6 +2,7 @@
 #define _149uart_
 #include "hello149.c"
 #include <msp430x14x.h>
+#include <stdio.h>
 /*当BRCLK=CPU_F时用下面的公式可以计算，否则要根据设置加入分频系数*/ 
 #define baud           9600                                //设置波特率的大小 
 #define baud_setting   (uint)((ulong)CPU_F/((ulong)baud))  //波特率计算公式 
@@ -40,5 +41,13 @@ void Send_Byte(uchar data)
 {   
   while(!(IFG2&UTXIFG1));             //发送寄存器空的时候发送数据
   U1TXBUF=data;
+}
+
+// 重定向c库函数printf到USART1
+int putchar(int c)
+{
+  /* 发送一个字节数据到USART1 */
+  Send_Byte((uchar) c);	
+  return (c);
 }
 #endif
