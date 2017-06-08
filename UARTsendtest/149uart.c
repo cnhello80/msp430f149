@@ -52,10 +52,10 @@ int putchar(int c)
   Send_Byte((uchar) c);	
   return (c);
 }
-#pragma vector=UART0RX_VECTOR
-__interrupt void UART1_RXISR(void)
+#pragma vector=UART1RX_VECTOR
+__interrupt void UART1_RX_ISR(void)
 {
-    buffer[bufferend] = RXBUF1; 
+    buffer[bufferend] =U1RXBUF; 
     if(bufferend==127)
       bufferend=0;
     else
