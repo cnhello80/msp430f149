@@ -7,6 +7,7 @@ const uchar UPLOAD1[]="联网上传数据模式";
 const uchar UPLOAD2[]="记录数据数:";
 const uchar UPLOAD3[]="点击确认开始上传";
 const uchar UPLOADING[]="上传中...";
+const uchar UPLOADED[]="上传完成";
 int now_menu=1;
 int measure_mode=1;
 int upload_status=0;
@@ -31,6 +32,7 @@ void LCD_refresh()
     {
     case 0:LCD_Line_fresh(0,2,UPLOAD3);break;
     case 1:LCD_Line_fresh(0,2,UPLOADING);break;
+    case 2:LCD_Line_fresh(0,2,UPLOADED);break;
     }
   }
 }

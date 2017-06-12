@@ -14,16 +14,16 @@ const char POSTTEST[]="POST /esptest.php HTTP/1.1\r\nHost: hello80.fangyuwang.co
 void Init_Wifi()
 {
   Send_Command(SETMODE);
-  delay_ms(500);
+  delay_ms(1000);
   Send_Command(LINKWIFI);
   delay_ms(5000);
   Send_Command(SETLINK);
-  delay_ms(200);
+  delay_ms(1000);
   Send_Command(SETCIP);
-  delay_ms(200);
+  delay_ms(1000);
   Send_Command(LINKSERVER);
-  delay_ms(500);
+  delay_ms(1000);
   Send_Command(CIPSTART);
-  delay_ms(200);
+  delay_ms(1000);
 }
 #endif

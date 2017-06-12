@@ -33,6 +33,7 @@ int read_buffer_button() //读取UART传来的简单指令
 int main( void )
 {
   WatchDog_off();
+  delay_ms(1000);
   Clock_Init();
   UART_Init();
   lcdinit();                  //初始化LCD 
@@ -43,6 +44,12 @@ int main( void )
     input_process(read_buffer_button());
     //LCD_Line_fresh(0,0,Imeasure);
     LCD_refresh();
+    if(upload_status==1)
+    {
+      Init_Wifi();
+      Send_Command(POSTTEST);
+      upload_status=2;
+    }
     delay_ms(1000);
   }
   return 0;
