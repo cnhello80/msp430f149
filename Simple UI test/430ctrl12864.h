@@ -77,9 +77,13 @@ void LCD_write_data(uchar ddata)
 {
   LCD_write(1, ddata);
 }
-void LCD_write_command(uchar ddata)
+void LDC_write_data(const uchar ddata)
 {
-  LCD_write(0, ddata);
+  LCD_write(1, ddata);
+}
+void LCD_write_commauchand(uchar ddata)
+{
+  LCD_write(0, (uchar)ddata);
 }
 void lcdinit()	 
 {
@@ -102,11 +106,11 @@ void lcdinit()
   LCD_write(0,0x06);  
 }
 
-uchar DIS1[] = {"    天祥电子   "};
-uchar DIS2[] = {"TX51STAR实验箱 "};
-uchar DIS3[] = {"www.tx-power.com"};
-uchar DIS4[] = {"TEL:045187572303"};
-uchar BLANK[]={"                "};
+const uchar DIS1[] = {"    天祥电子   "};
+const uchar DIS2[] = {"TX51STAR实验箱 "};
+const uchar DIS3[] = {"www.tx-power.com"};
+const uchar DIS4[] = {"TEL:045187572303"};
+const uchar BLANK[]={"                "};
 
 void LCD_clear() //清屏
 {
@@ -128,7 +132,7 @@ void LCD_set_address(uchar x,uchar y) //设置地址 x y
   LCD_write(0,address);
 }
 
-void LCD_write_string(uchar x,uchar y,uchar *str) //写句子 x y 字符串指针
+void LCD_write_string(uchar x,uchar y,const uchar *str) //写句子 x y 字符串指针
 {
   LCD_set_address(x,y); //写地址
   
@@ -139,7 +143,7 @@ void LCD_write_string(uchar x,uchar y,uchar *str) //写句子 x y 字符串指针
     }
 }
 
-void LCD_Line_fresh(uchar x,uchar y,uchar *str)
+void LCD_Line_fresh(uchar x,uchar y,const uchar *str)
 {
   LCD_write_string(x,y,BLANK);
   LCD_write_string(x,y,str);

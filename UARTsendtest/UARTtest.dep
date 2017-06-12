@@ -6,29 +6,29 @@
   <configuration>
     <name>Debug</name>
     <outputs>
-      <file>$TOOLKIT_DIR$\inc\in430.h</file>
       <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
       <file>$TOOLKIT_DIR$\config\lnk430F149.xcl</file>
-      <file>$TOOLKIT_DIR$\inc\msp430x14x.h</file>
-      <file>$TOOLKIT_DIR$\lib\dlib\dl430fn.r43</file>
       <file>$TOOLKIT_DIR$\inc\dlib\c\ystdio.h</file>
-      <file>$TOOLKIT_DIR$\lib\dlib\dl430fn.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
       <file>$PROJ_DIR$\main.cpp</file>
+      <file>$TOOLKIT_DIR$\inc\msp430x14x.h</file>
+      <file>$TOOLKIT_DIR$\inc\in430.h</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl430fn.r43</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl430fn.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.r43</file>
+      <file>$TOOLKIT_DIR$\config\multiplier.xcl</file>
       <file>$PROJ_DIR$\Debug\Exe\UARTtest.d43</file>
       <file>$PROJ_DIR$\149uart.c</file>
-      <file>$TOOLKIT_DIR$\config\multiplier.xcl</file>
-      <file>$PROJ_DIR$\Debug\Obj\main.r43</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
       <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
       <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
       <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
       <file>$TOOLKIT_DIR$\inc\dlib\c\stdio.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
       <file>$PROJ_DIR$\Debug\Obj\UARTtest.pbd</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
       <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
       <file>$PROJ_DIR$\hello149.c</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
       <file>$PROJ_DIR$\atcommand.h</file>
     </outputs>
     <file>
@@ -36,7 +36,7 @@
       <outputs>
         <tool>
           <name>XLINK</name>
-          <file> 10</file>
+          <file> 12</file>
         </tool>
       </outputs>
     </file>
@@ -45,21 +45,21 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 21</file>
+          <file> 20</file>
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 13</file>
+          <file> 10</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 5 0 15 22 11 18 17 16 2 20 1 14 3 7 23</file>
+          <file> 6 7 14 21 13 17 16 15 4 22 0 18 3 2 23</file>
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 5 0 15 22 11 18 17 16 2 8 20 1 14 3 7 23</file>
+          <file> 6 7 14 21 13 17 16 15 4 9 22 0 18 3 2 23</file>
         </tool>
       </inputs>
     </file>
@@ -68,7 +68,7 @@
       <inputs>
         <tool>
           <name>XLINK</name>
-          <file> 4 12 13 6</file>
+          <file> 1 11 10 8</file>
         </tool>
       </inputs>
     </file>
@@ -77,7 +77,7 @@
       <inputs>
         <tool>
           <name>BILINK</name>
-          <file> 21</file>
+          <file> 20</file>
         </tool>
       </inputs>
     </file>

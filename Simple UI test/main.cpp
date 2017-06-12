@@ -4,7 +4,7 @@
 #include "atcommand.h"
 #include "430ctrl12864.h"
 #include "SimpleUI.h"
-int read_buffer()
+int read_buffer_button() //读取UART传来的简单指令
 {
   if(bufferstart==bufferend)
     return 0;
@@ -16,12 +16,18 @@ int read_buffer()
       bufferstart++;
       return 1;
     }
-    else
+    else if(buffer[bufferstart]=='R')
     {
       bufferstart++;
       return 2;
     }
+    else if (buffer[bufferstart]=='O')
+    {
+      bufferstart++;
+      return 3;
+    }
   }
+  return 0;
 }
 
 int main( void )
@@ -34,7 +40,7 @@ int main( void )
   _EINT();
   while(1)
   {
-    input_process(read_buffer());
+    input_process(read_buffer_button());
     //LCD_Line_fresh(0,0,Imeasure);
     LCD_refresh();
     delay_ms(1000);
